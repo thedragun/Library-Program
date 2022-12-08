@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainPage</class>
+ <widget class="QDialog" name="MainPage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>580</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Catalog</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>307</width>
+     <height>561</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="SideBar">
+    <item>
+     <layout class="QHBoxLayout" name="SearchBar"/>
+    </item>
+    <item>
+     <widget class="QLabel" name="UserToolsTag">
+      <property name="text">
+       <string>User Tools</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>please enter issuer  name then Click on a book to issue book;</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="issuerLine">
+      <property name="placeholderText">
+       <string>Issuer Full Name</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="RowSelect"/>
+    </item>
+    <item>
+     <widget class="QPushButton" name="IssueBtn">
+      <property name="text">
+       <string>Issue Book</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="ReturnBtn">
+      <property name="text">
+       <string>Return Book</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="AdminTools">
+      <item>
+       <widget class="QLabel" name="AdminToolsTag">
+        <property name="text">
+         <string>Administrator Tools</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="AddBookBtn">
+        <property name="text">
+         <string>Add Book</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ModifyBookBtn">
+        <property name="text">
+         <string>Modify Book Info</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="AddUserBtn">
+        <property name="text">
+         <string>Add User</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="ModifyUserBtn">
+        <property name="text">
+         <string>Modify User Info</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QTabWidget" name="Catalog">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>10</y>
+     <width>751</width>
+     <height>561</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="Books">
+    <attribute name="title">
+     <string>Books</string>
+    </attribute>
+    <widget class="QTabWidget" name="BooksSub">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>741</width>
+       <height>541</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="Avalible">
+      <attribute name="title">
+       <string>Avalible</string>
+      </attribute>
+      <widget class="QTableWidget" name="AvalibleTable">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>731</width>
+         <height>471</height>
+        </rect>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>Book Title</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Author</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Genre A</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Genre B</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Last Due</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="RefreshBtn">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>0</y>
+         <width>299</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Refresh</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Issued">
+      <attribute name="title">
+       <string>Issued</string>
+      </attribute>
+      <widget class="QTableWidget" name="issuedTable">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>731</width>
+         <height>471</height>
+        </rect>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>Issuer Name</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Returned</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Book Title</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Author</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Genre A</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Genre B</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Last Due</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="RefreshBtn_2">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>0</y>
+         <width>299</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Refresh</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="Returned">
+      <attribute name="title">
+       <string>Returns</string>
+      </attribute>
+      <widget class="QPushButton" name="RefreshBtn_3">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>0</y>
+         <width>299</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Refresh</string>
+       </property>
+      </widget>
+      <widget class="QTableWidget" name="ReturnsTable">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>731</width>
+         <height>471</height>
+        </rect>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <row>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </row>
+       <column>
+        <property name="text">
+         <string>Issuer Name</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Returned</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Book Title</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Author</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Genre A</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Genre B</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Id</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Last Due</string>
+        </property>
+       </column>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="Users">
+    <attribute name="title">
+     <string>Users</string>
+    </attribute>
+    <widget class="QTableWidget" name="UserTable">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>741</width>
+       <height>501</height>
+      </rect>
+     </property>
+     <row>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>First Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Last Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Age</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Username</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Password</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Permissions</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="RefreshBtn_4">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>0</y>
+       <width>299</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Refresh</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>AddBookBtn</tabstop>
+  <tabstop>ModifyBookBtn</tabstop>
+  <tabstop>AddUserBtn</tabstop>
+  <tabstop>ModifyUserBtn</tabstop>
+  <tabstop>Catalog</tabstop>
+  <tabstop>BooksSub</tabstop>
+  <tabstop>RefreshBtn</tabstop>
+  <tabstop>AvalibleTable</tabstop>
+  <tabstop>UserTable</tabstop>
+  <tabstop>issuedTable</tabstop>
+  <tabstop>RefreshBtn_2</tabstop>
+  <tabstop>RefreshBtn_3</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
